@@ -1,4 +1,4 @@
-module Example
+module DBConnector
 export hello, domath
 
 """
