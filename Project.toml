@@ -2,6 +2,14 @@ name = "DBConnector"
 uuid = "5242bac9-aa14-4800-b46b-fcd14df13057"
 version = "1.0.0"
 
+[deps]
+DBInterface = "a10d1c49-ce27-4219-8d33-6db1a4562965"
+JDBC = "6042db11-3c3d-5e84-8dba-9cbf74c9ba48"
+LibPQ = "194296ae-ab2e-5f79-8cd4-7183a0a5a0d1"
+MySQL = "39abe10b-433b-5dbd-92d4-e302a9df00cd"
+ODBC = "be6f12e9-ca4f-5eb2-a339-a4f995cc0291"
+SQLite = "0aa819cd-b072-5ff4-a722-6bc24af294d9"
+
 [compat]
 julia = "1.6"
 
