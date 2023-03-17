@@ -1,5 +1,5 @@
-function _dbconnect(connector::Type{SQLite.DB}; file_path)
+function _dbconnect(connector::Type{SQLite.DB}, file_path::String)
 
-    return connector(file_path.second)
-
+    return connector(file_path)
+    
 end
