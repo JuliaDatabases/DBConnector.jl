@@ -11,6 +11,7 @@ ODBC = "be6f12e9-ca4f-5eb2-a339-a4f995cc0291"
 SQLite = "0aa819cd-b072-5ff4-a722-6bc24af294d9"
 
 [compat]
+ODBC = "1"
 julia = "1.6"
 
 [extras]
