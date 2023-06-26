@@ -19,5 +19,5 @@ makedocs(;
 )
 deploydocs(repo = "github.com/quinnj/Example.jl.git",
              push_preview = true,
-             devbranch = "main",
+             
     )

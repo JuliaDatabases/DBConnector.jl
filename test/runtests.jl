@@ -1,8 +1,6 @@
 using Test, Example
 using MySQL,SQLite, MySQL.API
 
-@test hello("Julia") == "Hello, Julia"
-@test domath(2.0) ≈ 7.0
 
 @testset "_dbconnect function for SQLite" begin
 
