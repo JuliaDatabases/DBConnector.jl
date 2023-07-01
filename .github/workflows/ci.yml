@@ -49,11 +49,11 @@ jobs:
         env:
           mysqluser: "${{secrets.MYSQL_USER}}"
           mysqlhost: "${{secrets.MYSQL_HOST}}"
-          mysqlport: ${{secrets.MYSQL_PORT}}
+          #mysqlport: ${{secrets.MYSQL_PORT}}
           mysqlpassword: "${{secrets.MYSQL_PASSWORD}}"
           postgresuser: "${{secrets.POSTGRES_USER}}"
           postgreshost: "${{secrets.POSTGRES_HOST}}"
-          postgresport: ${{secrets.POSTGRES_PORT}}
+          #postgresport: ${{secrets.POSTGRES_PORT}}
           postgrespassword: "${{secrets.POSTGRES_PASSWORD}}"
           
       - uses: julia-actions/julia-processcoverage@v1

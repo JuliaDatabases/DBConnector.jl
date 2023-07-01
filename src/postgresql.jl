@@ -19,8 +19,9 @@ function _dbconnect(conn_obj::Type{LibPQ.Connection}, host::String, user::String
 end
 
 function _dbconnect(conn_obj::Type{LibPQ.Connection},  host::String, user::String, password::String; db::String="", port::Integer=3306, unix_socket::Union{Nothing,String}=nothing,  opts = Dict())
+    #conn = LibPQ.Connection("postgresql://postgres:postgres3@localhost:5432/mimic?user=postgres")
 
-    return DBInterface.connect(conn_obj, "postgresql://$user:$password@$host:$port/$dbname?user=$user")
+    return DBInterface.connect(conn_obj, "postgresql://$user:$password@$host:$port/$db?user=$user")
 
 end
 
@@ -36,14 +37,3 @@ Workaround for LibPQ interface to DBInterface's `execute` function; not supporte
 """
 DBInterface.execute(conn::Union{LibPQ.Connection, LibPQ.Statement}, args...; kws...) =
     LibPQ.execute(conn, args...; kws...)
-
-
-    conn = LibPQ.Connection(
-        host="localhost",
-        port=5432,
-        dbname="mimic",
-        user="postgres",
-        password="postgres3"
-    )
-    conn = LibPQ.Connection("postgresql://postgres:postgres3@localhost:5432/mimic")
-]
