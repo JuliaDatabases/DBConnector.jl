@@ -13,7 +13,7 @@ end
  
 @testset "_dbconnect function for MySQL" begin
     
-    conn = _dbconnect(MySQL.Connection, mysqlhost, mysqluser,mysqlpassword, db="MySQL", port=mysqlport)
+    conn = _dbconnect(MySQL.Connection, ENV[mysqlhost], ENV[mysqluser], ENV[mysqlpassword], db="MySQL", port=ENV[mysqlport])
 
     @test typeof(conn) == MySQL.Connection
     @test isopen(conn)
@@ -23,8 +23,7 @@ end
 
 @testset "_dbconnect function for LibPQ" begin
 
-    #conn = LibPQ.Connection("postgresql://postgres:postgres3@localhost:5432/mimic?user=postgres")
-    conn= _dbconnect(LibPQ.Connection,  postgreshost, postgresuser, postgrespassword, db = "mimic", port=postgresport)
+    conn= _dbconnect(LibPQ.Connection,  ENV[postgreshost], ENV[postgresuser], ENV[postgrespassword], db = "mimic", port=ENV[postgresport])
     @test @isdefined conn
 
 end
