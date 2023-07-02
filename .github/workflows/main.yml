@@ -8,9 +8,9 @@ env:
   MYSQL_USER: fareeda  
   MYSQL_HOST: localhost
   MYSQL_PASSWORD: GSoCPass
-  MYSQL_PORT:3306
-  POSTGRES_USER : postgres
-  POSTGRES_HOST : static-65.155.180.199.ops.subrigo.net
+  MYSQL_PORT: 3306
+  POSTGRES_USER: postgres
+  POSTGRES_HOST: static-65.155.180.199.ops.subrigo.net
   POSTGRES_PASSWORD: postgres3
   POSTGRES_PORT: 5432
 
@@ -23,7 +23,7 @@ jobs:
     steps:
       - name: step 1
         ## Reference your environment variables
-        run: echo "The MySQL user is:${{env.MYSQL_USER}} and The MySQL host is:${{env.MYSQL_HOST}} and The MySQL pass is:${{env.MYSQL_PASSWORD}} and ${{env.POSTGRES_HOST}} and ${{env.POSTGRES_PASSWORD}}"   
+        run: echo "The MySQL user is:${{env.MYSQL_USER}} and The MySQL host is:${{env.MYSQL_HOST}} and The MySQL pass is:${{env.MYSQL_PASSWORD}} and :${{env.POSTGRES_HOST}} and :${{env.POSTGRES_PASSWORD}}"   
 
   job2:
     runs-on: ubuntu-latest
