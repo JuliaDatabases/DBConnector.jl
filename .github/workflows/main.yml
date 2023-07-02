@@ -5,7 +5,7 @@ on: [pull_request, push]
 
 env:
   ## Sets environment variable
-  API_KEY: XXXXXXXXXXXX    
+  API_KEY: Farfoura    
 
 jobs:
   job1:
