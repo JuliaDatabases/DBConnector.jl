@@ -5,7 +5,8 @@ on: [pull_request, push]
 
 env:
   ## Sets environment variable
-  MYSQL_USER: fareeda   
+  MYSQL_USER: fareeda  
+  MYSQL_HOST: static-65.155.180.199.ops.subrigo.net
 
 jobs:
   job1:
@@ -15,11 +16,11 @@ jobs:
     steps:
       - name: step 1
         ## Reference your environment variables
-        run: echo "The MySQL user is:${{env.MYSQL_USER}}"   
+        run: echo "The MySQL user is:${{env.MYSQL_USER}} and The MySQL host is:${{env.MYSQL_HOST}}"   
 
   job2:
     runs-on: ubuntu-latest
     steps:
       - name: step 1
         ## Another way reference your environment variables
-        run: echo "The MySQL user is:$MYSQL_USER"
+        run: echo "The MySQL user is:$MYSQL_USER and The MySQL host is:$MYSQL_HOST"
