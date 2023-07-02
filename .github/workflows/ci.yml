@@ -50,32 +50,6 @@ jobs:
       - uses: codecov/codecov-action@v1
         with:
           file: lcov.info
-  job1:
-    ## The type of runner that the job will run on,
-    ## here it runs on ubuntu latest
-    runs-on: ubuntu-latest
-    steps:
-      - name: step 1
-        ## Reference your environment variables
-        run: echo "The mysqlport is:${{secrets.MYSQL_PORT}}mysqluser:${{secrets.MYSQL_USER}}
-            mysqlhost:${{secrets.MYSQL_HOST}}
-            mysqlpassword:${{secrets.MYSQL_PASSWORD}}
-            postgresuser:${{secrets.POSTGRES_USER}}
-            postgreshost:${{secrets.POSTGRES_HOST}}
-            postgresport:${{secrets.POSTGRES_PORT}}
-            postgrespassword:${{secrets.POSTGRES_PASSWORD}}"
-  job2:
-    runs-on: ubuntu-latest
-    steps:
-      - name: step 1
-        ## Another way reference your environment variables
-        run: echo "The mysqlport is:${{secrets.MYSQL_PORT}}mysqluser:${{secrets.MYSQL_USER}}
-            mysqlhost:${{secrets.MYSQL_HOST}}
-            mysqlpassword:${{secrets.MYSQL_PASSWORD}}
-            postgresuser:${{secrets.POSTGRES_USER}}
-            postgreshost:${{secrets.POSTGRES_HOST}}
-            postgresport:${{secrets.POSTGRES_PORT}}
-            postgrespassword:${{secrets.POSTGRES_PASSWORD}}"
   docs:
     name: Documentation
     runs-on: ubuntu-latest
