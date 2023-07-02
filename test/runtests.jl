@@ -1,7 +1,5 @@
-using Test, Example
+using Test
 
-@test hello("Julia") == "Hello, Julia"
-@test domath(2.0) ≈ 7.0
 
 @testset "_dbconnect function for SQLite" begin
 
