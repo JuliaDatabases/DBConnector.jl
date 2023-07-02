@@ -3,23 +3,21 @@ name: env_tutorial
 ## pull request on the main branch
 on: [pull_request, push] 
 
-env:
-  ## Sets environment variable
-  MYSQL_USER: fareeda  
-  MYSQL_HOST: localhost
-  MYSQL_PASSWORD: GSoCPass
-  MYSQL_PORT: 3306
-  POSTGRES_USER: postgres
-  POSTGRES_HOST: static-65.155.180.199.ops.subrigo.net
-  POSTGRES_PASSWORD: postgres3
-  POSTGRES_PORT: 5432
-
-
 jobs:
   job1:
     ## The type of runner that the job will run on, 
     ## here it runs on ubuntu latest
     runs-on: ubuntu-latest 
+    env:
+      ## Sets environment variable
+      MYSQL_USER: fareeda  
+      MYSQL_HOST: localhost
+      MYSQL_PASSWORD: GSoCPass
+      MYSQL_PORT: 3306
+      POSTGRES_USER: postgres
+      POSTGRES_HOST: static-65.155.180.199.ops.subrigo.net
+      POSTGRES_PASSWORD: postgres3
+      POSTGRES_PORT: 5432
     steps:
       - name: step 1
         ## Reference your environment variables
