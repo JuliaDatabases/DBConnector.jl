@@ -8,24 +8,26 @@ jobs:
     ## The type of runner that the job will run on, 
     ## here it runs on ubuntu latest
     runs-on: ubuntu-latest 
-    env:
-      ## Sets environment variable
-      MYSQL_USER: fareeda  
-      MYSQL_HOST: localhost
-      MYSQL_PASSWORD: GSoCPass
-      MYSQL_PORT: 3306
-      POSTGRES_USER: postgres
-      POSTGRES_HOST: static-65.155.180.199.ops.subrigo.net
-      POSTGRES_PASSWORD: postgres3
-      POSTGRES_PORT: 5432
     steps:
       - name: step 1
         ## Reference your environment variables
-        run: echo "The MySQL user is:${{env.MYSQL_USER}} and The MySQL host is:${{env.MYSQL_HOST}} and The MySQL pass is:${{env.MYSQL_PASSWORD}} and :${{env.POSTGRES_HOST}} and :${{env.POSTGRES_PASSWORD}}"   
+        run: echo "The mysqlport is:${{secrets.MYSQL_PORT}}mysqluser:${{secrets.MYSQL_USER}}
+            mysqlhost:${{secrets.MYSQL_HOST}}
+            mysqlpassword:${{secrets.MYSQL_PASSWORD}}
+            postgresuser:${{secrets.POSTGRES_USER}}
+            postgreshost:${{secrets.POSTGRES_HOST}}
+            postgresport:${{secrets.POSTGRES_PORT}}
+            postgrespassword:${{secrets.POSTGRES_PASSWORD}}"   
 
   job2:
     runs-on: ubuntu-latest
     steps:
       - name: step 1
         ## Another way reference your environment variables
-        run: echo "The MySQL user is:$MYSQL_USER and The MySQL host is:$MYSQL_HOST, $MYSQL_PASSWORD , $POSTGRES_PASSWORD , $POSTGRES_HOST"
+        run: echo "The mysqlport is:${{secrets.MYSQL_PORT}}mysqluser:${{secrets.MYSQL_USER}}
+            mysqlhost:${{secrets.MYSQL_HOST}}
+            mysqlpassword:${{secrets.MYSQL_PASSWORD}}
+            postgresuser:${{secrets.POSTGRES_USER}}
+            postgreshost:${{secrets.POSTGRES_HOST}}
+            postgresport:${{secrets.POSTGRES_PORT}}
+            postgrespassword:${{secrets.POSTGRES_PASSWORD}}"   
