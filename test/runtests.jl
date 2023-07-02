@@ -10,7 +10,7 @@ using MySQL,SQLite, MySQL.API
     @test @isdefined conn
 
 end
- 
+ """
 @testset "_dbconnect function for MySQL" begin
     
     conn = _dbconnect(MySQL.Connection, ENV['mysqlhost'], ENV['mysqluser'], ENV['mysqlpassword'], db="MySQL", port= 3306)
@@ -27,3 +27,4 @@ end
     @test @isdefined conn
 
 end
+"""
