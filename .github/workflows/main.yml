@@ -5,7 +5,7 @@ on: [pull_request, push]
 
 env:
   ## Sets environment variable
-  API_KEY: Farfoura    
+  MYSQL_USER: fareeda   
 
 jobs:
   job1:
@@ -15,11 +15,11 @@ jobs:
     steps:
       - name: step 1
         ## Reference your environment variables
-        run: echo "The API key is:${{env.API_KEY}}"   
+        run: echo "The MySQL user is:${{env.MYSQL_USER}}"   
 
   job2:
     runs-on: ubuntu-latest
     steps:
       - name: step 1
         ## Another way reference your environment variables
-        run: echo "The API key is:$API_KEY"
+        run: echo "The MySQL user is:$MYSQL_USER"
