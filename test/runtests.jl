@@ -11,5 +11,7 @@ using Test, DataFrames
     out = output[1,1]
     expected_output = 30;
     @test out == expected_output
+    db_path = "DBConnector/DBConnector.jl/test/data/SQLite.db"
+    rm(db_path)
 
 end
