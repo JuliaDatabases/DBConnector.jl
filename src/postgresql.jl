@@ -4,7 +4,8 @@ Dispatch for LibPQ interface to DBInterface `connect` function; not supported in
 DBInterface.connect(::Type{LibPQ.Connection}, args...; kws...) =
     LibPQ.Connection(args...; kws...)
 
-function _dbconnect(conn_obj::Type{LibPQ.Connection}; kwargs...)
+function _dbconnect(conn_obj::Type{LibPQ.Connection}, host::String, user::String, password::String; db::String="", port::Integer=5432, unix_socket::Union{Nothing,String}=nothing, client_flag=API.CLIENT_MULTI_STATEMENTS, opts = Dict())
+
     conn_string = ""
     for k in kwargs 
         conn_string = conn_string * "$(string(k.first))=$(k.second) "
