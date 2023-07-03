@@ -1,4 +1,4 @@
-using Test, DataFrames
+using Test, DataFrames, SQLite
 
 
 @testset "_dbconnect function for SQLite" begin

@@ -1,5 +1,5 @@
-using Documenter, Example
+#using Documenter, Example
 
-makedocs(modules = [Example], sitename = "Example.jl")
+#makedocs(modules = [Example], sitename = "Example.jl")
 
-deploydocs(repo = "github.com/quinnj/Example.jl.git", push_preview = true)
+#deploydocs(repo = "github.com/quinnj/Example.jl.git", push_preview = true)
