@@ -8,23 +8,33 @@ function DBInterface.connect(::Type{JDBC.Connection}, args...; connection_string
     catch 
         println("JVM already initialized")
     end
-    JDBC.Connection(connection_string)
+    JDBC.DriverManager.getConnection(connection_string)
 end
 
 """
-Dispatch for LibPQ interface to DBInterface `prepare` function
-TODO: Not fully implemented yet
+Dispatch for JDBC interface to DBInterface `prepare` function
+BUG: Doesn't seem to work for all JDBC versions yet
 """
-# DBInterface.prepare(conn::JDBC.Connection, args...; kws...) =
-#     JDBC.prepareStatement(conn, args...; kws...)
+function DBInterface.prepare(conn::JDBC.JavaObject{Symbol("java.sql.Connection")}, args...; kws...)
+    stmt = JDBC.createStatement(conn)
+    result = executeQuery(stmt, args...)
+    return result
+end
 
 """
-Workaround for LibPQ interface to DBInterface's `execute` function
+Workaround for JDBC interface to DBInterface's `execute` function
 """
-function DBInterface.execute(conn::Union{JDBC.Connection, JDBC.JPreparedStatement}, args...; kws...)
-    csr = JDBC.cursor(conn)
-    JDBC.execute!(csr, args..., kws...)
-    JDBC.Source(csr)
+function DBInterface.execute(conn::JDBC.JavaObject{Symbol("java.sql.ResultSet")}, args...; kws...)
+    JDBC.Source(conn)
+end
+
+"""
+Workaround for JDBC interface to DBInterface's `execute` function
+"""
+function DBInterface.execute(conn::JDBC.JavaObject{Symbol("java.sql.Connection")}, args...; kws...)
+    stmt = JDBC.createStatement(conn)
+    result = executeQuery(stmt, args...)
+    JDBC.Source(result)
 end
 
 
