@@ -1,3 +1,4 @@
+using SQLite
 export _dbconnect
 
 function _dbconnect(connector::Type{SQLite.DB}, file_path::String)

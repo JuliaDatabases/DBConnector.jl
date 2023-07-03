@@ -1,5 +1,5 @@
 using Test, DataFrames, SQLite
-include("DBConnector.jl/src/sqlite.jl")
+include("/DBConnector.jl/src/sqlite.jl")
 
 @testset "_dbconnect function for SQLite" begin
 
