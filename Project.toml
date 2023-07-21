@@ -1,5 +1,6 @@
 name = "DBConnector"
 uuid = "5242bac9-aa14-4800-b46b-fcd14df13057"
+authors = ["Jacob Zelko <jacobszelko@gmail.com>", "Fareeda Abdelazeez"]
 version = "0.1.0"
 
 [deps]
