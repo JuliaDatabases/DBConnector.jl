@@ -1,5 +1,5 @@
 using Test, DataFrames, SQLite
-using MySQL,SQLite, MySQL.API, LibPQ
+using MySQL, SQLite, LibPQ
 using DBConnector
 
 @testset "_dbconnect function for SQLite" begin
