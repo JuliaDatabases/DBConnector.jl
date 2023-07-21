@@ -1,6 +1,6 @@
 name = "DBConnector"
 uuid = "5242bac9-aa14-4800-b46b-fcd14df13057"
-version = "1.0.0"
+version = "0.1.0"
 
 [deps]
 DBInterface = "a10d1c49-ce27-4219-8d33-6db1a4562965"
@@ -9,6 +9,10 @@ MySQL = "39abe10b-433b-5dbd-92d4-e302a9df00cd"
 SQLite = "0aa819cd-b072-5ff4-a722-6bc24af294d9"
 
 [compat]
+DBInterface = "2.5"
+LibPQ = "1.15"
+MySQL = "1.4"
+SQLite = "1.6"
 julia = "1.6"
 
 [extras]
