@@ -215,8 +215,10 @@ deps = ["Base64", "NetworkOptions", "Printf", "SHA"]
 uuid = "76f85450-5226-5b5a-8eaa-529ad045b433"
 
 [[deps.LibPQ]]
-deps = ["CEnum", "Dates", "Decimals", "DocStringExtensions", "FileWatching", "Infinity", "Intervals", "IterTools", "LayerDicts", "LibPQ_jll", "Libdl", "Memento", "OffsetArrays", "SQLStrings", "Tables", "TimeZones", "UTCDateTimes"]
-git-tree-sha1 = "114d9d239ab8e1251354ad6bb97ed38622133114"
+deps = ["CEnum", "DBInterface", "Dates", "Decimals", "DocStringExtensions", "FileWatching", "Infinity", "Intervals", "IterTools", "LayerDicts", "LibPQ_jll", "Libdl", "Memento", "OffsetArrays", "SQLStrings", "Tables", "TimeZones", "UTCDateTimes"]
+git-tree-sha1 = "b23b47236c2c5e1766a68ff19b74501c99340236"
+repo-rev = "dbinterface"
+repo-url = "https://github.com/chris-b1/LibPQ.jl"
 uuid = "194296ae-ab2e-5f79-8cd4-7183a0a5a0d1"
 version = "1.15.1"
 
