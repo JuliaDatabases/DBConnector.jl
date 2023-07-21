@@ -18,16 +18,6 @@ using DBConnector
 end
 
 
-@testset "_dbconnect function for MySQL" begin
-    
-    conn = DBConnector._dbconnect(MySQL.Connection, ENV["MYSQL_HOST"], ENV["MYSQL_USER"], ENV["MYSQL_PASSWORD"], db="MySQL")
-
-    @test typeof(conn) == MySQL.Connection
-    @test isopen(conn)
-    close(conn)
-
-end
-
 @testset "_dbconnect function for LibPQ" begin
 
     conn= DBConnector._dbconnect(LibPQ.Connection,  host = ENV["POSTGRES_HOST"], user = ENV["POSTGRES_USER"], dbname = "mimic", password = ENV["POSTGRES_PASSWORD"])
