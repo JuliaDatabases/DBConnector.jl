@@ -5,7 +5,6 @@ using MySQL
 using SQLite
 using LibPQ
 using DBConnector
-import MySQL: API
 
 @testset "_dbconnect function for SQLite" begin
 
