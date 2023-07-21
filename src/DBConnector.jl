@@ -4,6 +4,7 @@ using DBInterface
 using LibPQ
 using SQLite
 using MySQL
+import MySQL: API
 
 include("postgresql.jl")
 include("sqlite.jl") 
