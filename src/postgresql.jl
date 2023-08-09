@@ -16,6 +16,23 @@ function _dbconnect(conn_obj::Type{LibPQ.Connection}; kwargs...)
 
 end
 
+function _dbconnect(conn_obj::Type{LibPQ.Connection}, conn_string :: String)
+    
+    return DBInterface.connect(conn_obj, conn_string)
+
+end
+
+function _dbconnect(conn_obj::Type{LibPQ.Connection}, host::String, user::String, password::String; db::String="", port::Integer=3306, unix_socket::Union{Nothing,String}=nothing, client_flag=API.CLIENT_MULTI_STATEMENTS, opts = Dict())
+
+    if unix_socket == nothing
+        unix_socket = API.MYSQL_DEFAULT_SOCKET
+    end
+
+    conn_string = "postgersql://$(user):$(password)@$(host)/$(db)?user=$(user)"
+
+    return DBInterface.connect(conn_obj, conn_string)
+
+end
 #= 
 
 function _dbconnect(conn_obj::Type{LibPQ.Connection}; host::String, user::String, password::String; db::String="", port::Integer=5432, unix_socket::Union{Nothing,String}=nothing, client_flag=API.CLIENT_MULTI_STATEMENTS, opts = Dict())
