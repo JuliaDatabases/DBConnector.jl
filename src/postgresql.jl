@@ -24,10 +24,6 @@ end
 
 function _dbconnect(conn_obj::Type{LibPQ.Connection}, host::String, user::String, password::String, db::String; port::Integer=5432)
 
-    if unix_socket == nothing
-        unix_socket = API.MYSQL_DEFAULT_SOCKET
-    end
-
     conn_string = "postgresql://$(user):$(password)@$(host)/$(db)?user=$(user)"
 
     return DBInterface.connect(conn_obj, conn_string)
