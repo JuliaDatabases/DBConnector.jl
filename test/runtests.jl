@@ -20,7 +20,7 @@ end
 @testset "_dbconnect function for LibPQ" begin
 
     #conn= DBConnector._dbconnect(LibPQ.Connection,  ENV["POSTGRES_HOST"],ENV["POSTGRES_USER"], ENV["POSTGRES_PASSWORD"], "omop")
-    DBConnector._dbconnect(LibPQ.Connection,  "199.180.155.65", "postgres", "postgres3", "omop")
+    conn = DBConnector._dbconnect(LibPQ.Connection,  "199.180.155.65", "postgres", "postgres3", "omop")
     @test @isdefined conn
 
 end
