@@ -70,4 +70,4 @@ Note: It produces error only in case the path is incorrect credentials
 
 Package descriptions:
 
-- [`LibPQ`](https://github.com/chris-b1/LibPQ.jl#dbinterface) - A Julia interface to the LibPQ library
+- [LibPQ](https://github.com/chris-b1/LibPQ.jl#dbinterface) - A Julia interface to the LibPQ library

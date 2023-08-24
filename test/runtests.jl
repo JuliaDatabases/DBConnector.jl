@@ -2,7 +2,6 @@ using Test
 using DataFrames
 using SQLite
 using MySQL
-using SQLite
 using LibPQ
 using DBConnector
 
@@ -19,20 +18,20 @@ end
 
 @testset "_dbconnect function for LibPQ" begin
 
-    #conn= DBConnector._dbconnect(LibPQ.Connection,  ENV["POSTGRES_HOST"],ENV["POSTGRES_USER"], ENV["POSTGRES_PASSWORD"], "omop")
-    conn = DBConnector._dbconnect(LibPQ.Connection,  "199.180.155.65", "postgres", "postgres3", "omop")
+    conn= DBConnector._dbconnect(LibPQ.Connection,  ENV["POSTGRES_HOST"],ENV["POSTGRES_USER"], ENV["POSTGRES_PASSWORD"], "omop")
     @test @isdefined conn
 
 end
-
+"""
 @testset "_dbconnect function for MySQL" begin
     
-    conn = DBConnector._dbconnect(MySQL.Connection, ENV["MYSQL_HOST"], ENV["MYSQL_USER"], ENV["MYSQL_PASSWORD"], db="MySQL")
-
+    #conn = DBConnector._dbconnect(MySQL.Connection, ENV["MYSQL_HOST"], ENV["MYSQL_USER"], ENV["MYSQL_PASSWORD"], db="MySQL")
+    conn = DBConnector._dbconnect(MySQL.Connection, "199.180.155.65","fareeda", "GSoCPass"; db="MySQL")
+    @test @isdefined conn
     @test typeof(conn) == MySQL.Connection
     @test isopen(conn)
     close(conn)
 
 end
 
-
+"""

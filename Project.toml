@@ -12,7 +12,6 @@ SQLite = "0aa819cd-b072-5ff4-a722-6bc24af294d9"
 [compat]
 DBInterface = "2.5"
 LibPQ = "1.15"
-MySQL = "1.4"
 SQLite = "1.6"
 julia = "1.6"
 
