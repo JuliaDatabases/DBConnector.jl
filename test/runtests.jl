@@ -18,7 +18,8 @@ end
 
 @testset "_dbconnect function for LibPQ" begin
 
-    conn= DBConnector._dbconnect(LibPQ.Connection,  ENV["POSTGRES_HOST"],ENV["POSTGRES_USER"], ENV["POSTGRES_PASSWORD"], "omop")
+    conn= DBConnector._dbconnect(LibPQ.Connection,  host = ENV["POSTGRES_HOST"],user = ENV["POSTGRES_USER"], password = ENV["POSTGRES_PASSWORD"], db = "omop")
+
     @test @isdefined conn
 
 end

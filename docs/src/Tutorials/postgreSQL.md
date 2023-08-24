@@ -14,15 +14,14 @@ Get your database's :
 
         1- username
         2- password
-        3- host
-        5- Database name
+        
 
         optional:
+        - host
+        - Database name
         - port (5432 by default)
-        - unix_socket 
-        - client_flag
-        - opts=opts 
 
+Note: If you have additional keys that are necessary to be added, Jump to Method 2: 
 
 ## Environment Set-Up 
 
@@ -50,7 +49,7 @@ TUTORIAL> add DBConnector
 ```
 using DBConnector
 
-conn= _dbconnect(LibPQ.Connection, host, user, password, db=db)
+conn= _dbconnect(LibPQ.Connection; host = host, user = user, password = password, db=db)
 
 ```
 In case you want to use the optional strings:
@@ -58,13 +57,25 @@ In case you want to use the optional strings:
 ```
 using DBConnector
 
-conn= _dbconnect(LibPQ.Connection, host, user, password, db="the database name", port = 5432, unix_socket=unix_socket, client_flag=client_flag, opts=opts )
+conn= _dbconnect(LibPQ.Connection; host = host, user = user, password = password, db="the database name", port = 5432)
 
 ```
+
+
 
 Now you are connected!
 
 Note: It produces error only in case the path is incorrect credentials
+
+# Method 2
+
+create your own connection string as this example:
+
+```
+connection_string = "postgresql://username:password@unix:/path/to/socket/directory/database_name"
+
+conn= _dbconnect(LibPQ.Connection, connection_string)
+```
 
 ### Packages Used in Analysis
 

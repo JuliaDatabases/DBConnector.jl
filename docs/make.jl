@@ -1,3 +1,4 @@
+using DBConnector
 using Documenter
 
 makedocs(;
